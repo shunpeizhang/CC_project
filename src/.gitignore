@@ -11,13 +11,11 @@ autom4te.cache
 build
 compile
 config.guess
-config.h
 config.h.in
 config.h.in~
 config.log
 config.status
 config.sub
-configure
 depcomp
 .deps
 install-sh
@@ -26,7 +24,6 @@ libtool
 libzlog.so*
 libzlog.a*
 ltmain.sh
-Makefile
 Makefile.in
 missing
 stamp-h1
