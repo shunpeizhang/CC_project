@@ -1,10 +1,11 @@
 #!/bin/bash
 
-
+cd ..
+mkdir libs
 
 
 #zlog
-cd ../src/zlog-master
+cd src/zlog-master
 make
 if [ 0 != $? ]; then
 	echo "zlog make failed"
