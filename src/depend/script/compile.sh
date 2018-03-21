@@ -1,16 +1,23 @@
 #!/bin/bash
 
-cd ..
-mkdir libs
+path=`pwd`
+
+
+if [ ! -d "../libs" ];then
+	mkdir ../libs
+fi
+
 
 
 #zlog
-cd src/zlog-master
+cd ${path}
+cd ../src/zlog-master
 make
 if [ 0 != $? ]; then
 	echo "zlog make failed"
 	exit 1
-if
+fi
+cd ${path}
 cp ../src/zlog-master/src/libzlog* ../libs
 
 
