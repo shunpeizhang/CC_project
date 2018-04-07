@@ -3,6 +3,16 @@
 
 
 
+class ScriptObject: public PyObject
+{
+public:
+
+
+	
+
+
+
+};
 
 
 
