@@ -42,7 +42,8 @@ public:
 
 	static void _tp_dealloc(PyObject* self)								
 	{																						
-		delete static_cast<CTestObject*>(self);									
+		//delete static_cast<CTestObject*>(self);
+		PyObject_Free(self);
 	}
 
 	static PyObject* tp_repr(PyObject* self)
@@ -115,9 +116,9 @@ PyTypeObject CTestObject::_scriptType =
 	0,														/* tp_descr_set 	  */	\
 	0,								                        /* tp_dictoffset	  */	\
 	(initproc)CTestObject::_tp_init,						/* tp_init			  */	\
-	0,														/* tp_alloc 		  */	\
-	CTestObject::_tp_new,									/* tp_new			  */	\
-	PyObject_GC_Del,										/* tp_free			  */	\
+	PyType_GenericAlloc,									/* tp_alloc 		  */	\
+	PyType_GenericNew,									    /* tp_new			  */	\
+	PyObject_Del,										    /* tp_free			  */	\
 };
 
 
